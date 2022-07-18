@@ -28,5 +28,7 @@ option = st.selectbox(
      'Please choose the item：',
      ('priority date', 'filing/creation date', 'publication date'))
 
-df=patent_data.sort_values(by=option,ascending=False)
+columns1=['id', 'title', 'priority date', 'filing/creation date', 'publication date', 'grant date', 'inventor/author',  'assignee']
+new_df=patent_data[columns1]
+df=new_df.sort_values(by=option,ascending=False).set_index(option)
 st.write(df)
