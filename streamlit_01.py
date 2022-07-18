@@ -17,11 +17,10 @@ txt=Corp.split(' ')
 #len(test)
 if len(txt) >2:
   st.error('Type Error!! Company name need to < 3 ')
-  #print('Type Error!! Company name need to < 3 ')
 elif len(txt)==1:
-  link2='https://patents.google.com/xhr/query?url=assignee%3D{}%26country%3DUS%26language%3DENGLISH%26type%3DPATENT%26num%3D100%26sort%3Dnew&exp=&download=true'.format(test[0])
+  link2='https://patents.google.com/xhr/query?url=assignee%3D{}%26country%3DUS%26language%3DENGLISH%26type%3DPATENT%26num%3D100%26sort%3Dnew&exp=&download=true'.format(txt[0])
 else :
-  link2='https://patents.google.com/xhr/query?url=assignee%3D{}%2B{}%26country%3DUS%26language%3DENGLISH%26type%3DPATENT%26num%3D100%26sort%3Dnew&exp=&download=true'.format(test[0],test[1])
+  link2='https://patents.google.com/xhr/query?url=assignee%3D{}%2B{}%26country%3DUS%26language%3DENGLISH%26type%3DPATENT%26num%3D100%26sort%3Dnew&exp=&download=true'.format(txt[0],txt[1])
 
 patent_data=pd.read_csv(link2,skiprows=1)
 option = st.selectbox(
