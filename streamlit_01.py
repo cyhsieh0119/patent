@@ -3,6 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+st.set_page_config(page_title="Patent Search"
+                   ,page_icon="random"
+                   ,layout="wide")
+
 st.markdown("# Patent Search page 🎈")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
 
