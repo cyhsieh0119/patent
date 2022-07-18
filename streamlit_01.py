@@ -3,9 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-st.markdown("# Main page 🎈")
+st.markdown("# Patent Search page 🎈")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
-st.set_page_config(page_title="Patent Search")
 
 st.write(st.__version__)
 Corp='Kymeta'
