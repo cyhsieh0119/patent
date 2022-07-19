@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(page_title="Patent Search"
                    ,page_icon="random"
@@ -9,7 +10,6 @@ st.set_page_config(page_title="Patent Search"
 
 st.markdown("# Patent Search page 🎈")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
-
 
 st.write(st.__version__)
 Corp = st.text_input('Please input the keyword of company :', 'apple')
@@ -32,5 +32,12 @@ else :
   #
   columns1=['id', 'title', 'priority date', 'filing/creation date', 'publication date', 'grant date', 'inventor/author',  'assignee']
   new_df=patent_data[columns1]
+  new_df['filing/year']=patent_data[filing/creation date].str[0:4]
   df=new_df.sort_values(by=option,ascending=False).set_index(option)
-  st.write(df)
+  #
+  fig = px.histogram(new_df1, x="filing/year")
+  #
+  col1, col2 = st.columns([2, 1])
+  col1.write(df)
+  col2.subheader("Patent Filing Trend")
+  col2.write(fig)
