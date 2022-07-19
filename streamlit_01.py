@@ -1,3 +1,5 @@
+!/home/appuser/venv/bin/python -m pip install --upgrade pip
+!pip install -U plotly
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
