@@ -37,7 +37,9 @@ else :
   #
   fig = px.histogram(new_df, x="filing/year")
   #
-  col1, col2 = st.columns([2, 1])
+  #st.columns((2, 1, 1, 1))
+  col1, col2 = st.columns((2, 1))
+  #
   col1.write(df)
   col2.subheader("Patent Filing Trend")
   col2.write(fig)
