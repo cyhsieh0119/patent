@@ -32,10 +32,10 @@ else :
   #
   columns1=['id', 'title', 'priority date', 'filing/creation date', 'publication date', 'grant date', 'inventor/author',  'assignee']
   new_df=patent_data[columns1]
-  new_df['filing/year']=patent_data[filing/creation date].str[0:4]
+  new_df['filing/year']=patent_data['filing/creation date'].str[0:4]
   df=new_df.sort_values(by=option,ascending=False).set_index(option)
   #
-  fig = px.histogram(new_df1, x="filing/year")
+  fig = px.histogram(new_df, x="filing/year")
   #
   col1, col2 = st.columns([2, 1])
   col1.write(df)
